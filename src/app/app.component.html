@@ -1,32 +1,36 @@
-<p>
-  <mat-toolbar color="primary">
+<div class="bg-cl">
 
-    <span>Todo</span>
+  <p>
+    <mat-toolbar color="primary">
 
-  </mat-toolbar>
-</p>
+      <span>Todo</span>
 
-<div class="col-8">
-  <mat-card>
-    <h3>Todo List</h3>
-    <!-- Add-Todo -->
-    <div class="row">
-      <div class="col-10"><input class="form-control" placeholder="What do you need to do today?"
-          [(ngModel)]="todoTitle" (keyup.enter)="addTodo()"></div>
-      <div class="col-2"><button (click)="addTodo()" class="col-10 btn btn-primary">Add</button></div>
-    </div>
+    </mat-toolbar>
+  </p>
 
-    <div class="todo-item" *ngFor="let todo of todosFiltered()">
-      <div class="row todo-item mt-3">
-        <!-- checkbox -->
-        <span class="col"> <input type="checkbox" [(ngModel)]="todo.completed"></span>
-        <!-- display-todo -->
-        <div class="todo-item-label col-8" [ngClass]="{ 'completed' : todo.completed }">{{ todo.title }}</div>
-        <!-- delete-todo -->
-        <i class="col-3 fa fa-times text-primary" (click)="deleteTodo(todo.id)" aria-hidden="true"></i>
-        <hr class="m-0">
+  <div class="container txt-cnt mt-5">
+    <mat-card class="col-md-8 ">
+      <h3>Todo List</h3>
+      <!-- Add-Todo -->
+      <div class="row">
+        <div class="col-md-9"><input class="form-control" placeholder="What do you need to do today?"
+            [(ngModel)]="todoTitle" (keyup.enter)="addTodo()"></div>
+        <div class="col-2"><button (click)="addTodo()" class="col-10 btn btn-primary">Add</button></div>
       </div>
-    </div>
 
-  </mat-card>
+      <div class="todo-item" *ngFor="let todo of todosFiltered()">
+        <div class="row todo-item mt-3">
+          <!-- checkbox -->
+          <span class="col"> <input type="checkbox" [(ngModel)]="todo.completed"></span>
+          <!-- display-todo -->
+          <div class="todo-item-label col-8" [ngClass]="{ 'completed' : todo.completed }">{{ todo.title }}</div>
+          <!-- delete-todo -->
+          <i class="col-3 fa fa-times text-primary" (click)="deleteTodo(todo.id)" aria-hidden="true"></i>
+          <hr class="m-0">
+        </div>
+      </div>
+
+    </mat-card>
+  </div>
+
 </div>

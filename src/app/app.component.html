@@ -9,7 +9,7 @@
     </p>
 
     <div class="container txt-cnt mt-5">
-        <mat-card class="col-md-8 col-8">
+        <mat-card class="col-md-8 col-8 mat-elevation-z19 bg-white">
             <h3>Todo List</h3>
             <!-- Add-Todo -->
             <div class="row">
@@ -20,7 +20,7 @@
             <div class="todo-item" *ngFor="let todo of todosFiltered()">
                 <div class="row todo-item mt-3">
                     <!-- checkbox -->
-                    <span class="col"> <input type="checkbox" [(ngModel)]="todo.completed"></span>
+                    <span class="col-1 col-md-1"> <input type="checkbox" [(ngModel)]="todo.completed"></span>
                     <!-- display-todo -->
                     <div class="todo-item-label col-md-8 col-10" [ngClass]="{ 'completed' : todo.completed }">{{ todo.title }}</div>
                     <!-- delete-todo -->

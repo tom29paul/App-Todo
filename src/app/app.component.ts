@@ -51,6 +51,10 @@ export class AppComponent {
     this.idForTodo++;
   }
 
+  resetTodo(){
+    this.todos=[];
+  }
+
   deleteTodo(id: number): void {
     this.todos = this.todos.filter((todo) => todo.id !== id);
   }
